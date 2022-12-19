@@ -9,8 +9,8 @@ describe('My First Test', () => {
     before(() => {
         // executes once prior all tests in it block
         cy.fixture('credential').then(function (data) {
-            this.data = data
-        });
+            data = data
+        })
     });
     it('Verify the HomePage', () => {
 
