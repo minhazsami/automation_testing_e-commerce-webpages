@@ -16,9 +16,14 @@ describe('My First Test', () => {
   it('Verify the HomePage', () => {
 
     cy.visit(data.baseUrl)
-    signup.signUpPage()
-    signup.newUser()
 
+  });
+
+  it('verify the sign up form', () => {
+    cy.visit(data.baseUrl)
+    signup.signUpPage()
+    signup.newUserName()
+    signup.newUserEmail()
   })
 
 })
