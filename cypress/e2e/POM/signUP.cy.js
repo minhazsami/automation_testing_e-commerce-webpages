@@ -1,5 +1,3 @@
-import cypress from "cypress";
-
 let data; //closure variable
 
 before(() => {
@@ -23,9 +21,11 @@ class signUp {
     }
 
     newUserEmail() {
-        cy.get('input[data-qa="signup-email"]').type('minhaz@')
-        cy.get('button[data-qa="signup-button"]').click()
-        cypress.$0.validationMessage().should('content.text', "Please enter a part following '@'. 'minhaz@' is incomplete.")
+        //cy.get('input[data-qa="signup-email"]').type('minhaz@').then()
+        cy.get('.signup-form').within(() => {
+            cy.get('input[data-qa="signup-email"]').type('minhaz@').invoke('prop', 'validationMessage').should('equal', "Please enter a part following '@'. 'minhaz@' is incomplete.")
+        })
+        //cy.get('button[data-qa="signup-button"]').click()
     }
 
 
