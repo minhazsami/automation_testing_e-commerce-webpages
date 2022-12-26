@@ -7,29 +7,31 @@ const EnterAccountInfo = new enterAccountInfo();
 
 
 describe('My First Test', () => {
-  let data; //closure variable
+  let testData; //closure variable
 
   before(() => {
     // executes once prior all tests in it block
     cy.fixture('credential').then(function (fdata) {
-      data = fdata
+      testData = fdata
     })
   });
 
   it('Verify the HomePage', () => {
 
-    cy.visit(data.baseUrl)
+    cy.visit(testData.baseUrl)
 
   });
 
   it('verify the sign up form', () => {
-    cy.visit(data.baseUrl)
+    cy.visit(testData.baseUrl)
     signup.signUpPage()
     signup.newUserName()
     signup.newUserEmail()
     signup.submitCTA()
     EnterAccountInfo.title()
     EnterAccountInfo.name()
+    EnterAccountInfo.password()
+    EnterAccountInfo.DateOfBirth()
   })
 
 })
