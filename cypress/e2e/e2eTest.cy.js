@@ -24,6 +24,7 @@ describe('My First Test', () => {
     signup.signUpPage()
     signup.newUserName()
     signup.newUserEmail()
+    signup.submitCTA()
   })
 
 })
