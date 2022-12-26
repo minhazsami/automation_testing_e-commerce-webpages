@@ -1,7 +1,10 @@
 /// <reference types="Cypress" />
 
-import signUp from "./POM/signUP.cy"
+import signUp from "./POM/signUP.cy";
+import enterAccountInfo from "./POM/enterAccountInfo";
 const signup = new signUp();
+const EnterAccountInfo = new enterAccountInfo();
+
 
 describe('My First Test', () => {
   let data; //closure variable
@@ -16,9 +19,17 @@ describe('My First Test', () => {
   it('Verify the HomePage', () => {
 
     cy.visit(data.baseUrl)
-    signup.signUpPage()
-    signup.newUser()
 
+  });
+
+  it('verify the sign up form', () => {
+    cy.visit(data.baseUrl)
+    signup.signUpPage()
+    signup.newUserName()
+    signup.newUserEmail()
+    signup.submitCTA()
+    EnterAccountInfo.title()
+    EnterAccountInfo.name()
   })
 
 })
