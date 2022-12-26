@@ -36,6 +36,7 @@ class signUp {
             cy.get('input[data-qa="signup-email"]')
                 .invoke('prop', 'validationMessage')
                 .should('equal', 'Please fill out this field.')
+
             cy.get('input[data-qa="signup-email"]').type('minhaz')
                 .invoke('prop', 'validationMessage')
                 .should('equal', "Please include an '@' in the email address. 'minhaz' is missing an '@'.")
