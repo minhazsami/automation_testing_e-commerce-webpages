@@ -32,6 +32,11 @@ describe('My First Test', () => {
     EnterAccountInfo.name()
     EnterAccountInfo.password()
     EnterAccountInfo.DateOfBirth()
+    EnterAccountInfo.checkBox()
+    EnterAccountInfo.firstName()
+    EnterAccountInfo.lastName()
+    EnterAccountInfo.companyName()
+    EnterAccountInfo.address()
   })
 
 })

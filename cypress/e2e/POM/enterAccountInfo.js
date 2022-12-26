@@ -33,7 +33,28 @@ class enterAccountInfo {
     DateOfBirth() {
         cy.get('#days').select(19)
         cy.get('#months').select('July')
-        cy.get('#years').select(1994, '1994')
+        cy.get('#years').select('1994').should('have.value', '1994')
+    }
+
+    checkBox() {
+        cy.get('#newsletter').check()
+        cy.get('#optin').check()
+    }
+
+    firstName() {
+        cy.get('[data-qa="first_name"]').type('Mohammed').should('have.attr', 'required')
+    }
+
+    lastName() {
+        cy.get('[data-qa="last_name"]').type('Minhaz').should('have.attr', 'required')
+    }
+
+    companyName() {
+        cy.get('[data-qa="company"]').type('Shop innovation').should('have.value', 'Shop innovation')
+    }
+
+    address() {
+        cy.get('[data-qa="address"]').type('Dhaka Bangladesh').should('have.attr', 'required')
     }
 
 }
