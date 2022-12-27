@@ -2,8 +2,11 @@
 
 import signUp from "./POM/signUP.cy";
 import enterAccountInfo from "./POM/enterAccountInfo";
+import login from "./POM/login";
+
 const signup = new signUp();
 const EnterAccountInfo = new enterAccountInfo();
+const Login = new login();
 
 
 describe('My First Test', () => {
@@ -46,6 +49,9 @@ describe('My First Test', () => {
 
   it('Verify the Login', () => {
     cy.visit(testData.baseUrl + '/login')
+    Login.loginEmailAddress()
+    Login.loginPassword()
+    Login.loginCTA()
 
   })
 

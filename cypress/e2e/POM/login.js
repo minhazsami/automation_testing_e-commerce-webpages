@@ -24,7 +24,7 @@ class login {
 
         })// validation HTML info Message
 
-        cy.get('[data-qa="login-email"]').type(testData.email)
+        cy.get('[data-qa="login-email"]').clear().type(testData.email)
     }
 
     loginPassword() {
@@ -33,6 +33,14 @@ class login {
                 .invoke('prop', 'validationMessage')
                 .should('equal', 'Please fill out this field.')
         })
+
+        cy.get('[data-qa="login-password"]').type(testData.password)
+
+    }
+
+    loginCTA() {
+        cy.get('[data-qa="login-button"]').click()
+        cy.get(':nth-child(10) > a').should('have.text', ' Logged in as Mohammed Minhaz')
     }
 
 }
