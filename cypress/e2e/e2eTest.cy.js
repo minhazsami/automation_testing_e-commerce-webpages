@@ -22,7 +22,7 @@ describe('My First Test', () => {
 
   });
 
-  it('verify the sign up form', () => {
+  /*it('verify the sign up form', () => {
     cy.visit(testData.baseUrl)
     signup.signUpPage()
     signup.newUserName()
@@ -37,6 +37,16 @@ describe('My First Test', () => {
     EnterAccountInfo.lastName()
     EnterAccountInfo.companyName()
     EnterAccountInfo.address()
+    EnterAccountInfo.state()
+    EnterAccountInfo.city()
+    EnterAccountInfo.zipCode()
+    EnterAccountInfo.mobileNumber()
+    EnterAccountInfo.createAccountCTA()
+  })*/
+
+  it('Verify the Login', () => {
+    cy.visit(testData.baseUrl + '/login')
+
   })
 
 })

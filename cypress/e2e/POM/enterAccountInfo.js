@@ -57,6 +57,28 @@ class enterAccountInfo {
         cy.get('[data-qa="address"]').type('Dhaka Bangladesh').should('have.attr', 'required')
     }
 
+    state() {
+        cy.get('[data-qa="state"]').type('Dhaka').should('have.attr', 'required')
+    }
+
+    city() {
+        cy.get('[data-qa="city"]').type('Dhaka').should('have.attr', 'required')
+    }
+
+    zipCode() {
+        cy.get('[data-qa="zipcode"]').type('1206').should('have.attr', 'required')
+    }
+
+    mobileNumber() {
+        cy.get('[data-qa="mobile_number"]').type('01999999999').should('have.attr', 'required')
+    }
+
+    createAccountCTA() {
+        cy.get('[data-qa="create-account"]').click()
+        cy.get('[data-qa="account-created"]').should('have.text', 'Account Created!')
+        cy.get('#form > .container > .row').should('have.text', 'Congratulations! Your new account has been successfully created!')
+    }
+
 }
 
 export default enterAccountInfo
