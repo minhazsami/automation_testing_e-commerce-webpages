@@ -52,6 +52,7 @@ describe('My First Test', () => {
     Login.loginEmailAddress()
     Login.loginPassword()
     Login.loginCTA()
+    //Login.CTA()
 
   })
 
