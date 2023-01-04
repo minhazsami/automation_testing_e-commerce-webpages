@@ -3,10 +3,12 @@
 import signUp from "./POM/signUP.cy";
 import enterAccountInfo from "./POM/enterAccountInfo";
 import login from "./POM/login";
+import cart from "./POM/addToCart";
 
 const signup = new signUp();
 const EnterAccountInfo = new enterAccountInfo();
 const Login = new login();
+const AddToCart = new cart();
 
 
 describe('My First Test', () => {
@@ -47,12 +49,21 @@ describe('My First Test', () => {
     EnterAccountInfo.createAccountCTA()
   })*/
 
-  it('Verify the Login', () => {
+  /*it('Verify the Login', () => {
     cy.visit(testData.baseUrl + '/login')
     Login.loginEmailAddress()
     Login.loginPassword()
     Login.loginCTA()
 
+  })*/
+
+  it('Verify the product add to cart', () => {
+    cy.visit(testData.baseUrl)
+    cy.scrollTo(0, 500)
+    AddToCart.product()
+    AddToCart.addCart()
+    AddToCart.viewCart()
+    AddToCart.checkOut()
   })
 
 })
